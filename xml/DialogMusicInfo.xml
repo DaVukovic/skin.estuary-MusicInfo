@@ -10,14 +10,15 @@
 			<centerleft>50%</centerleft>
 			<width>1920</width>
 			<control type="group">
+				<description>album or artist thumb</description> 
 				<include>OpenClose_Left</include>
 				<top>158</top>
 				<left>40</left>
 				<control type="image">
 					<left>4</left>
 					<top>4</top>
-					<width>607</width>
-					<height>607</height>
+					<width>307</width>
+					<height>307</height>
 					<aspectratio>scale</aspectratio>
 					<texture>dialogs/dialog-bg-nobo.png</texture>
 					<bordertexture border="21">overlays/shadow.png</bordertexture>
@@ -27,15 +28,15 @@
 					<depth>DepthContentPopout</depth>
 					<left>24</left>
 					<top>24</top>
-					<width>567</width>
-					<height>567</height>
+					<width>267</width>
+					<height>267</height>
 					<aspectratio aligny="top">scale</aspectratio>
 					<fadetime>300</fadetime>
 					<texture background="true">$VAR[MusicInfoThumbVar]</texture>
 				</control>
 			</control>
 			<control type="group">
-				<include>OpenClose_Right</include>
+				<include>OpenClose_Left</include>
 				<include>Visible_Right</include>
 				<left>80</left>
 				<visible>![Window.Is(songinformation) + Window.IsActive(musicinformation)]</visible>
@@ -43,6 +44,7 @@
 					<visible>Integer.IsEqual(Container(50).NumItems,0) + String.IsEmpty(Control.GetLabel(400))</visible>
 					<top>160</top>
 					<control type="button" id="130">
+						<description>song info</description>
 						<left>586</left>
 						<width>1190</width>
 						<height>610</height>
@@ -97,9 +99,9 @@
 					<control type="button" id="130">
 						<onup>50</onup>
 						<ondown>9000</ondown>
-						<left>586</left>
-						<width>1190</width>
-						<height>320</height>
+						<left>-35</left>
+						<width>1057</width>
+						<height>500</height>
 						<label></label>
 						<texturenofocus border="21">dialogs/dialog-bg.png</texturenofocus>
 						<onclick>SetProperty(TextViewer_Header,$LOCALIZE[21821],home)</onclick>
@@ -110,28 +112,29 @@
 						<animation effect="slide" start="0,0" end="0,-295" time="0" condition="Integer.IsEqual(Container(50).NumItems,0)">Conditional</animation>
 						<visible>[!Integer.IsEqual(Container(50).NumItems,0) + String.IsEmpty(Control.GetLabel(400))] | [Integer.IsEqual(Container(50).NumItems,0) + !String.IsEmpty(Control.GetLabel(400))]</visible>
 						<control type="image">
-							<left>614</left>
+							<left>-4</left>
 							<top>30</top>
-							<width>1130</width>
-							<height>260</height>
+							<width>993</width>
+							<height>440</height>
 							<aspectratio aligny="top">scale</aspectratio>
 							<texture fallback="special://skin/extras/home-images/music.jpg">$INFO[ListItem.Art(fanart)]</texture>
 						</control>
 						<control type="group">
+							<description>'No Info' message</description>
 							<visible>String.IsEmpty(ListItem.Art(fanart))</visible>
 							<control type="image">
-								<left>614</left>
-								<top>30</top>
-								<width>1130</width>
-								<height>260</height>
+								<left>-15</left>
+								<top>20</top>
+								<width>1018</width>
+								<height>460</height>
 								<aspectratio>scale</aspectratio>
 								<texture colordiffuse="AAFFFFFF">colors/black.png</texture>
 							</control>
 							<control type="textbox">
-								<left>614</left>
-								<top>30</top>
-								<width>1130</width>
-								<height>260</height>
+								<left>-14</left>
+								<top>20</top>
+								<width>1018</width>
+								<height>460</height>
 								<align>center</align>
 								<aligny>center</aligny>
 								<font>font45_title</font>
@@ -141,18 +144,25 @@
 					</control>
 				</control>
 				<control type="label" id="400">
-					<left>630</left>
+					<description>textbox for plot</description>
+					<left>10</left>
 					<top>490</top>
-					<width>1100</width>
-					<height>240</height>
+					<width>975</width>
+					<height>400</height>
 					<wrapmultiline>true</wrapmultiline>
 					<label>$VAR[MusicInfoTextboxVar]</label>
 					<textcolor>button_focus</textcolor>
 				</control>
+			</control>
+			<control type="group">
+				<include>OpenClose_Right</include>
+				<include>Visible_Right</include>
+				<left>80</left>
+				<visible>![Window.Is(songinformation) + Window.IsActive(musicinformation)]</visible>
 				<control type="panel" id="50">
-					<left>585</left>
+					<left>300</left>
 					<top>170</top>
-					<width>1190</width>
+					<width>1425</width>
 					<height>360</height>
 					<ondown>130</ondown>
 					<onup>9000</onup>
@@ -319,7 +329,7 @@
 				</control>
 				<control type="grouplist" id="9000">
 					<left>10</left>
-					<top>820</top>
+					<top>930</top>
 					<width>1740</width>
 					<height>300</height>
 					<onleft>9000</onleft>
@@ -414,11 +424,22 @@
 				</control>
 				<include content="LeftRightArrows">
 					<param name="list_id" value="50" />
-					<param name="left_posx" value="562" />
-					<param name="right_posx" value="1780" />
+					<param name="left_posx" value="270" />
+					<param name="right_posx" value="1730" />
 					<param name="posy" value="300" />
 					<param name="visible" value="true" />
 				</include>
+				<control type="group">
+					<description>infolabels for artist and album info</description>
+					<control type="image">
+						<left>1025</left>
+						<top>474</top>
+						<width>685</width>
+						<height>460</height>
+						<aspectratio>scale</aspectratio>
+						<texture colordiffuse="AAFFFFFF">colors/black.png</texture>
+					</control>
+				</control>
 			</control>
 			<control type="group">
 				<visible>String.IsEqual(ListItem.DBType,artist)</visible>
