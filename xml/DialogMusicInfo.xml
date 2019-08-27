@@ -36,27 +36,28 @@
 				</control>
 			</control>
 			<control type="group">
+				<description>plot, textbox, no info</description>
 				<include>OpenClose_Left</include>
 				<include>Visible_Right</include>
 				<left>80</left>
 				<visible>![Window.Is(songinformation) + Window.IsActive(musicinformation)]</visible>
 				<control type="group">
 					<visible>Integer.IsEqual(Container(50).NumItems,0) + String.IsEmpty(Control.GetLabel(400))</visible>
-					<top>160</top>
+					<top>455</top>
 					<control type="button" id="130">
 						<description>song info</description>
-						<left>586</left>
-						<width>1190</width>
-						<height>610</height>
+						<left>-36</left>
+						<width>1048</width>
+						<height>499</height>
 						<onup>50</onup>
 						<ondown>9000</ondown>
 						<label></label>
 					</control>
 					<control type="image">
-						<left>614</left>
+						<left>-4</left>
 						<top>30</top>
-						<width>1130</width>
-						<height>550</height>
+						<width>988</width>
+						<height>439</height>
 						<aspectratio aligny="top">scale</aspectratio>
 						<texture fallback="special://skin/extras/home-images/music.jpg">$INFO[ListItem.Art(fanart)]</texture>
 						<visible>String.IsEmpty(Control.GetLabel(400))</visible>
@@ -64,18 +65,18 @@
 					<control type="group">
 						<visible>String.IsEmpty(Control.GetLabel(400)) + String.IsEmpty(ListItem.Art(fanart))</visible>
 						<control type="image">
-							<left>614</left>
-							<top>30</top>
-							<width>1130</width>
-							<height>550</height>
+							<left>-16</left>
+							<top>20</top>
+							<width>1010</width>
+							<height>459</height>
 							<aspectratio>scale</aspectratio>
 							<texture colordiffuse="AAFFFFFF">colors/black.png</texture>
 						</control>
 						<control type="textbox">
-							<left>614</left>
-							<top>30</top>
-							<width>1130</width>
-							<height>550</height>
+							<left>16</left>
+							<top>20</top>
+							<width>1010</width>
+							<height>459</height>
 							<align>center</align>
 							<aligny>center</aligny>
 							<font>font45_title</font>
@@ -87,6 +88,8 @@
 					<visible>!Integer.IsEqual(Container(50).NumItems,0) | !String.IsEmpty(Control.GetLabel(400))</visible>
 					<top>454</top>
 					<control type="button">
+						<onleft>41</onleft>
+						<onright>41</onright>
 						<onup>50</onup>
 						<ondown>9000</ondown>
 						<left>586</left>
@@ -97,6 +100,8 @@
 						<visible>Integer.IsEqual(Container(50).NumItems,0)</visible>
 					</control>
 					<control type="button" id="130">
+						<onleft>41</onleft>
+						<onright>41</onright>
 						<onup>50</onup>
 						<ondown>9000</ondown>
 						<left>-35</left>
@@ -162,7 +167,7 @@
 				<control type="panel" id="50">
 					<left>300</left>
 					<top>170</top>
-					<width>1425</width>
+					<width>1410</width>
 					<height>360</height>
 					<ondown>130</ondown>
 					<onup>9000</onup>
@@ -438,6 +443,68 @@
 						<height>460</height>
 						<aspectratio>scale</aspectratio>
 						<texture colordiffuse="AAFFFFFF">colors/black.png</texture>
+					</control>
+					<control type="group">
+						<left>1040</left>
+						<top>480</top>
+						<visible>true</visible>
+						<control type="list" id="41">
+							<left>0</left>
+							<top>0</top>
+							<width>640</width>
+							<height>450</height>
+							<onleft>130</onleft>
+							<onright>130</onright>
+							<onup>50</onup>
+							<ondown>9000</ondown>
+							<pagecontrol/>
+							<scrolltime>200</scrolltime>
+							<itemlayout height="35">
+								<control type="label">
+									<left>10</left>
+									<top>0</top>
+									<height>30</height>
+									<font>font27_narrow</font>
+									<label>$INFO[ListItem.Label,[COLOR button_focus], [/COLOR]]</label>
+								</control>
+								<control type="label">
+									<left>160</left>
+									<width>480</width>
+									<height>30</height>
+									<font>font27_narrow</font>
+									<label>$INFO[ListItem.Label2]</label>
+								</control>
+							</itemlayout>
+							<focusedlayout height="35">
+								<control type="image">
+									<left>0</left>
+									<top>1</top>
+									<width>640</width>
+									<height>33</height>
+									<texture border="8" colordiffuse="button_focus">buttons/thumbnail_focused.png</texture>
+									<visible>Control.HasFocus(41)</visible>
+								</control>
+								<control type="label">
+									<left>10</left>
+									<top>0</top>
+									<height>30</height>
+									<font>font27_narrow</font>
+									<label>$INFO[ListItem.Label,[COLOR button_focus], [/COLOR]]</label>
+								</control>
+								<control type="label">
+									<left>160</left>
+									<width>480</width>
+									<height>30</height>
+									<font>font27_narrow</font>
+									<label>$INFO[ListItem.Label2]</label>
+								</control>
+							</focusedlayout>
+							<content>
+								<include condition="String.IsEqual(ListItem.DBTYPE,artist)">MusicInfoArtistInfo</include>
+								<include condition="String.IsEqual(ListItem.DBTYPE,album)">MusicInfoAlbumInfo</include>
+								<include condition="String.IsEqual(ListItem.DBTYPE,song)">MusicInfoSongInfo</include>
+							</content>
+						</control>
 					</control>
 				</control>
 			</control>
