@@ -126,6 +126,11 @@
 	</include>
 	<include name="MusicInfoSongInfo">
 		<item>
+			<label>$LOCALIZE[568]</label>
+			<label2>$INFO[ListItem.LastPlayed]</label2>
+			<visible>!String.IsEmpty(ListItem.Playcount)</visible>
+		</item>
+		<item>
 			<label>$LOCALIZE[557]:</label>
 			<label2>$INFO[ListItem.Artist]</label2>
 			<visible>!String.IsEmpty(ListItem.Artist)</visible>

@@ -333,16 +333,16 @@
 					</focusedlayout>
 				</control>
 				<control type="grouplist" id="9000">
-					<left>10</left>
+					<left>-30</left>
 					<top>930</top>
-					<width>1740</width>
+					<width>1760</width>
 					<height>300</height>
 					<onleft>9000</onleft>
 					<onright>9000</onright>
 					<onup>130</onup>
 					<ondown>50</ondown>
 					<align>center</align>
-					<itemgap>0</itemgap>
+					<itemgap>-12</itemgap>
 					<orientation>horizontal</orientation>
 					<control type="radiobutton" id="155">
 						<include content="VideoInfoButtonsCommon">
@@ -463,8 +463,10 @@
 								<control type="label">
 									<left>10</left>
 									<top>0</top>
+									<width>150</width>
 									<height>30</height>
 									<font>font27_narrow</font>
+									<wrapmultiline>true</wrapmultiline>
 									<label>$INFO[ListItem.Label,[COLOR button_focus], [/COLOR]]</label>
 								</control>
 								<control type="label">
@@ -487,6 +489,8 @@
 								<control type="label">
 									<left>10</left>
 									<top>0</top>
+									<width>150</width>
+									<wrapmultiline>true</wrapmultiline>
 									<height>30</height>
 									<font>font27_narrow</font>
 									<label>$INFO[ListItem.Label,[COLOR button_focus], [/COLOR]]</label>
