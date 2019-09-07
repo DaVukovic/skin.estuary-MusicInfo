@@ -2,14 +2,44 @@
 <includes>
 	<include name="MusicInfoArtistInfo">
 		<item>
+			<label>$LOCALIZE[39027]:</label>
+			<label2>$INFO[ListItem.Property(Artist_Sortname)]</label2>
+			<visible>!String.IsEmpty(ListItem.Property(Artist_Sortname))</visible>
+		</item>
+		<item>
+			<label>$LOCALIZE[39025]:</label>
+			<label2>$INFO[ListItem.Property(Artist_Gender)]</label2>
+			<visible>!String.IsEmpty(ListItem.Property(Artist_Gender))</visible>
+		</item>
+		<item>
+			<label>$LOCALIZE[467]:</label>
+			<label2>$INFO[ListItem.Property(Artist_Type)]</label2>
+			<visible>!String.IsEmpty(ListItem.Property(Artist_Type))</visible>
+		</item>
+		<item>
 			<label>$LOCALIZE[21893]:</label>
 			<label2>$INFO[ListItem.Property(Artist_Born)]</label2>
 			<visible>!String.IsEmpty(ListItem.Property(Artist_Born))</visible>
 		</item>
 		<item>
+			<label>$LOCALIZE[21897]:</label>
+			<label2>$INFO[ListItem.Property(Artist_Died)]</label2>
+			<visible>!String.IsEmpty(ListItem.Property(Artist_Died))</visible>
+		</item>
+		<item>
 			<label>$LOCALIZE[21894]:</label>
 			<label2>$INFO[ListItem.Property(Artist_Formed)]</label2>
 			<visible>!String.IsEmpty(ListItem.Property(Artist_Formed))</visible>
+		</item>
+		<item>
+			<label>$LOCALIZE[21896]:</label>
+			<label2>$INFO[ListItem.Property(Artist_Disbanded)]</label2>
+			<visible>!String.IsEmpty(ListItem.Property(Artist_Disbanded))</visible>
+		</item>
+		<item>
+			<label>$LOCALIZE[21898]:</label>
+			<label2>$INFO[ListItem.Property(Artist_YearsActive)]</label2>
+			<visible>!String.IsEmpty(ListItem.Property(Artist_YearsActive))</visible>
 		</item>
 		<item>
 			<label>$LOCALIZE[515]:</label>
@@ -32,36 +62,6 @@
 				<visible>!String.IsEmpty(ListItem.Property(Artist_Instrument))</visible>
 		</item>
 		<item>
-			<label>$LOCALIZE[21897]:</label>
-			<label2>$INFO[ListItem.Property(Artist_Died)]</label2>
-			<visible>!String.IsEmpty(ListItem.Property(Artist_Died))</visible>
-		</item>
-		<item>
-			<label>$LOCALIZE[21896]:</label>
-			<label2>$INFO[ListItem.Property(Artist_Disbanded)]</label2>
-			<visible>!String.IsEmpty(ListItem.Property(Artist_Disbanded))</visible>
-		</item>
-		<item>
-			<label>$LOCALIZE[21898]:</label>
-			<label2>$INFO[ListItem.Property(Artist_YearsActive)]</label2>
-			<visible>!String.IsEmpty(ListItem.Property(Artist_YearsActive))</visible>
-		</item>
-		<item>
-			<label>$LOCALIZE[39027]:</label>
-			<label2>$INFO[ListItem.Property(Artist_Sortname)]</label2>
-			<visible>!String.IsEmpty(ListItem.Property(Artist_Sortname))</visible>
-		</item>
-		<item>
-			<label>$LOCALIZE[467]:</label>
-			<label2>$INFO[ListItem.Property(Artist_Type)]</label2>
-			<visible>!String.IsEmpty(ListItem.Property(Artist_Type))</visible>
-		</item>
-		<item>
-			<label>$LOCALIZE[39025]:</label>
-			<label2>$INFO[ListItem.Property(Artist_Gender)]</label2>
-			<visible>!String.IsEmpty(ListItem.Property(Artist_Gender))</visible>
-		</item>
-		<item>
 			<label>$LOCALIZE[39026]:</label>
 			<label2>$INFO[ListItem.Property(Artist_Disambiguation)]</label2>
 			<visible>!String.IsEmpty(ListItem.Property(Artist_Disambiguation))</visible>
@@ -74,19 +74,19 @@
 			<visible>!String.IsEmpty(ListItem.Artist)</visible>
 		</item>
 		<item>
+			<label>146</label>
+			<label2>$INFO[ListItem.Property(Album_Type)]</label2>
+			<visible>!String.IsEmpty(ListItem.Property(Album_Type))</visible>
+		</item>
+		<item>
+			<label>$LOCALIZE[562]:</label>
+			<label2>$INFO[ListItem.Year]</label2>
+			<visible>!String.IsEmpty(ListItem.Year)</visible>
+		</item>
+		<item>
 			<label>$LOCALIZE[515]:</label>
 			<label2>$INFO[ListItem.Genre]</label2>
 			<visible>!String.IsEmpty(ListItem.Genre)</visible>
-		</item>
-		<item>
-			<label>$LOCALIZE[563]:</label>
-			<label2>$INFO[ListItem.RatingAndVotes]</label2>
-			<visible>!String.IsEmpty(ListItem.RatingAndVotes)</visible>
-		</item>
-		<item>
-			<label>$LOCALIZE[38018]:</label>
-			<label2>$INFO[ListItem.Userrating]</label2>
-			<visible>!String.IsEmpty(ListItem.Userrating)</visible>
 		</item>
 		<item>
 			<label>$LOCALIZE[175]:</label>
@@ -104,19 +104,19 @@
 			<visible>!String.IsEmpty(ListItem.Property(Album_Theme))</visible>
 		</item>
 		<item>
-			<label>146</label>
-			<label2>$INFO[ListItem.Property(Album_Type)]</label2>
-			<visible>!String.IsEmpty(ListItem.Property(Album_Type))</visible>
-		</item>
-		<item>
 			<label>$LOCALIZE[21899]:</label>
 			<label2>$INFO[ListItem.Property(Album_Label)]</label2>
 			<visible>!String.IsEmpty(ListItem.Property(Album_Label))</visible>
 		</item>
 		<item>
-			<label>$LOCALIZE[562]:</label>
-			<label2>$INFO[ListItem.Year]</label2>
-			<visible>!String.IsEmpty(ListItem.Year)</visible>
+			<label>$LOCALIZE[563]:</label>
+			<label2>$INFO[ListItem.RatingAndVotes]</label2>
+			<visible>!String.IsEmpty(ListItem.RatingAndVotes)</visible>
+		</item>
+		<item>
+			<label>$LOCALIZE[38018]:</label>
+			<label2>$INFO[ListItem.Userrating]</label2>
+			<visible>!String.IsEmpty(ListItem.Userrating)</visible>
 		</item>
 		<item>
 			<label>$LOCALIZE[15311]</label>
