@@ -87,7 +87,7 @@
 				<control type="group">
 					<visible>!Integer.IsEqual(Container(50).NumItems,0) | !String.IsEmpty(Control.GetLabel(400))</visible>
 					<top>454</top>
-					<control type="button">
+					<!--control type="button">
 						<onleft>41</onleft>
 						<onright>41</onright>
 						<onup>50</onup>
@@ -98,7 +98,7 @@
 						<height>320</height>
 						<label></label>
 						<visible>Integer.IsEqual(Container(50).NumItems,0)</visible>
-					</control>
+					</control -->
 					<control type="button" id="130">
 						<onleft>41</onleft>
 						<onright>41</onright>
@@ -115,7 +115,7 @@
 					</control>
 					<control type="group">
 						<animation effect="slide" start="0,0" end="0,-295" time="0" condition="Integer.IsEqual(Container(50).NumItems,0)">Conditional</animation>
-						<visible>[!Integer.IsEqual(Container(50).NumItems,0) + String.IsEmpty(Control.GetLabel(400))] | [Integer.IsEqual(Container(50).NumItems,0) + !String.IsEmpty(Control.GetLabel(400))]</visible>
+						<visible>[!Integer.IsEqual(Container(50).NumItems,0) + String.IsEmpty(Control.GetLabel(400))]</visible>
 						<control type="image">
 							<left>-4</left>
 							<top>30</top>
@@ -123,6 +123,40 @@
 							<height>440</height>
 							<aspectratio aligny="top">scale</aspectratio>
 							<texture fallback="special://skin/extras/home-images/music.jpg">$INFO[ListItem.Art(fanart)]</texture>
+						</control>
+						<control type="group">
+							<description>'No Info' message</description>
+							<visible>String.IsEmpty(ListItem.Art(fanart))</visible>
+							<control type="image">
+								<left>-15</left>
+								<top>20</top>
+								<width>1018</width>
+								<height>460</height>
+								<aspectratio>scale</aspectratio>
+								<texture colordiffuse="AAFFFFFF">colors/black.png</texture>
+							</control>
+							<control type="textbox">
+								<left>-14</left>
+								<top>20</top>
+								<width>1018</width>
+								<height>460</height>
+								<align>center</align>
+								<aligny>center</aligny>
+								<font>font45_title</font>
+								<label>$LOCALIZE[19055]</label>
+							</control>
+						</control>
+					</control>
+					<control type="group">
+						<animation effect="slide" start="0,0" end="0,-295" time="0" condition="Integer.IsEqual(Container(50).NumItems,0)">Conditional</animation>
+						<visible>[Integer.IsEqual(Container(50).NumItems,0) + !String.IsEmpty(Control.GetLabel(400))]</visible>
+						<control type="image">
+							<left>556</left>
+							<top>20</top>
+							<width>1150</width>
+							<height>277</height>
+							<aspectratio aligny="top">scale</aspectratio>
+							<texture fallback="special://skin/extras/home-images/music.jpg">$INFO[ListItem.Art(fanart)]</texture >
 						</control>
 						<control type="group">
 							<description>'No Info' message</description>
