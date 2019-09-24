@@ -10,7 +10,6 @@
 			<centerleft>50%</centerleft>
 			<width>1920</width>
 			<control type="group">
-				<description>album or artist thumb</description> 
 				<include>OpenClose_Left</include>
 				<top>158</top>
 				<left>40</left>
@@ -36,7 +35,6 @@
 				</control>
 			</control>
 			<control type="group">
-				<description>plot, textbox, no info</description>
 				<include>OpenClose_Left</include>
 				<include>Visible_Right</include>
 				<left>80</left>
@@ -45,7 +43,6 @@
 					<visible>Integer.IsEqual(Container(50).NumItems,0) + String.IsEmpty(Control.GetLabel(400))</visible>
 					<top>455</top>
 					<control type="button" id="130">
-						<description>song info</description>
 						<left>-36</left>
 						<width>1048</width>
 						<height>499</height>
@@ -87,18 +84,6 @@
 				<control type="group">
 					<visible>!Integer.IsEqual(Container(50).NumItems,0) | !String.IsEmpty(Control.GetLabel(400))</visible>
 					<top>454</top>
-					<!--control type="button">
-						<onleft>41</onleft>
-						<onright>41</onright>
-						<onup>50</onup>
-						<ondown>9000</ondown>
-						<left>586</left>
-						<top>-295</top>
-						<width>1190</width>
-						<height>320</height>
-						<label></label>
-						<visible>Integer.IsEqual(Container(50).NumItems,0)</visible>
-					</control -->
 					<control type="button" id="130">
 						<onleft>41</onleft>
 						<onright>41</onright>
@@ -111,7 +96,7 @@
 						<texturenofocus border="21">dialogs/dialog-bg.png</texturenofocus>
 						<onclick>SetProperty(TextViewer_Header,$LOCALIZE[21821],home)</onclick>
 						<onclick>SetProperty(TextViewer_Text,$ESCVAR[MusicInfoTextboxVar],home)</onclick>
-						<onclick>ActivateWindow(1102)</onclick>
+						<onclick condition="[String.IsEqual(ListItem.DbType,song) + !String.IsEmpty(ListItem.Comment)] | [String.IsEqual(ListItem.DbType,album) + !String.IsEmpty(ListItem.Property(Album_Description))] | [String.IsEqual(ListItem.DbType,artist) + !String.IsEmpty(ListItem.Property(Artist_Description))]">ActivateWindow(1102)</onclick>
 					</control>
 					<control type="group">
 						<animation effect="slide" start="0,0" end="0,-295" time="0" condition="Integer.IsEqual(Container(50).NumItems,0)">Conditional</animation>
@@ -125,7 +110,6 @@
 							<texture fallback="special://skin/extras/home-images/music.jpg">$INFO[ListItem.Art(fanart)]</texture>
 						</control>
 						<control type="group">
-							<description>'No Info' message</description>
 							<visible>String.IsEmpty(ListItem.Art(fanart))</visible>
 							<control type="image">
 								<left>-15</left>
@@ -159,7 +143,6 @@
 							<texture fallback="special://skin/extras/home-images/music.jpg">$INFO[ListItem.Art(fanart)]</texture >
 						</control>
 						<control type="group">
-							<description>'No Info' message</description>
 							<visible>String.IsEmpty(ListItem.Art(fanart))</visible>
 							<control type="image">
 								<left>-15</left>
@@ -183,7 +166,6 @@
 					</control>
 				</control>
 				<control type="label" id="400">
-					<description>textbox for plot</description>
 					<left>10</left>
 					<top>490</top>
 					<width>975</width>
@@ -216,7 +198,7 @@
 						<control type="label">
 							<left>40</left>
 							<top>10</top>
-							<width>546</width>
+							<width>535</width>
 							<height>60</height>
 							<font>font12</font>
 							<aligny>center</aligny>
@@ -233,7 +215,7 @@
 						<control type="label">
 							<left>40</left>
 							<top>10</top>
-							<width>546</width>
+							<width>535</width>
 							<height>60</height>
 							<font>font12</font>
 							<aligny>center</aligny>
@@ -250,7 +232,7 @@
 						<control type="label">
 							<left>40</left>
 							<top>10</top>
-							<width>546</width>
+							<width>535</width>
 							<height>60</height>
 							<font>font12</font>
 							<aligny>center</aligny>
@@ -273,7 +255,7 @@
 							<control type="label">
 								<left>40</left>
 								<top>10</top>
-								<width>546</width>
+								<width>535</width>
 								<height>60</height>
 								<font>font12</font>
 								<aligny>center</aligny>
@@ -469,7 +451,6 @@
 					<param name="visible" value="true" />
 				</include>
 				<control type="group">
-					<description>infolabels for artist and album info</description>
 					<control type="image">
 						<left>1025</left>
 						<top>474</top>
