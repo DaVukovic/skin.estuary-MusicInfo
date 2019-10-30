@@ -11,13 +11,11 @@
 			<width>1920</width>
 			<control type="group">
 				<include>OpenClose_Left</include>
-				<top>158</top>
+				<top>200</top>
 				<left>40</left>
 				<control type="image">
-					<left>4</left>
-					<top>4</top>
-					<width>307</width>
-					<height>307</height>
+					<width>620</width>
+					<height>620</height>
 					<aspectratio>scale</aspectratio>
 					<texture>dialogs/dialog-bg-nobo.png</texture>
 					<bordertexture border="21">overlays/shadow.png</bordertexture>
@@ -25,10 +23,10 @@
 				</control>
 				<control type="image">
 					<depth>DepthContentPopout</depth>
-					<left>24</left>
-					<top>24</top>
-					<width>267</width>
-					<height>267</height>
+					<left>25</left>
+					<top>25</top>
+					<width>570</width>
+					<height>570</height>
 					<aspectratio aligny="top">scale</aspectratio>
 					<fadetime>300</fadetime>
 					<texture background="true">$VAR[MusicInfoThumbVar]</texture>
@@ -37,15 +35,15 @@
 			<control type="group">
 				<include>OpenClose_Left</include>
 				<include>Visible_Right</include>
-				<left>80</left>
+				<left>705</left>
 				<visible>![Window.Is(songinformation) + Window.IsActive(musicinformation)]</visible>
 				<control type="group">
 					<visible>Integer.IsEqual(Container(50).NumItems,0) + String.IsEmpty(Control.GetLabel(400))</visible>
 					<top>455</top>
 					<control type="button" id="130">
 						<left>-36</left>
-						<width>1048</width>
-						<height>499</height>
+						<width>720</width>
+						<height>430</height>
 						<onup>50</onup>
 						<ondown>9000</ondown>
 						<label></label>
@@ -53,8 +51,8 @@
 					<control type="image">
 						<left>-4</left>
 						<top>30</top>
-						<width>988</width>
-						<height>439</height>
+						<width>660</width>
+						<height>370</height>
 						<aspectratio aligny="top">scale</aspectratio>
 						<texture fallback="special://skin/extras/home-images/music.jpg">$INFO[ListItem.Art(fanart)]</texture>
 						<visible>String.IsEmpty(Control.GetLabel(400))</visible>
@@ -64,16 +62,16 @@
 						<control type="image">
 							<left>-16</left>
 							<top>20</top>
-							<width>1010</width>
-							<height>459</height>
+							<width>680</width>
+							<height>390</height>
 							<aspectratio>scale</aspectratio>
 							<texture colordiffuse="AAFFFFFF">colors/black.png</texture>
 						</control>
 						<control type="textbox">
 							<left>16</left>
 							<top>20</top>
-							<width>1010</width>
-							<height>459</height>
+							<width>680</width>
+							<height>390</height>
 							<align>center</align>
 							<aligny>center</aligny>
 							<font>font45_title</font>
@@ -90,8 +88,8 @@
 						<onup>50</onup>
 						<ondown>9000</ondown>
 						<left>-35</left>
-						<width>1057</width>
-						<height>500</height>
+						<width>720</width>
+						<height>430</height>
 						<label></label>
 						<texturenofocus border="21">dialogs/dialog-bg.png</texturenofocus>
 						<onclick>SetProperty(TextViewer_Header,$LOCALIZE[21821],home)</onclick>
@@ -104,8 +102,8 @@
 						<control type="image">
 							<left>-4</left>
 							<top>30</top>
-							<width>993</width>
-							<height>440</height>
+							<width>660</width>
+							<height>370</height>
 							<aspectratio aligny="top">scale</aspectratio>
 							<texture fallback="special://skin/extras/home-images/music.jpg">$INFO[ListItem.Art(fanart)]</texture>
 						</control>
@@ -114,16 +112,16 @@
 							<control type="image">
 								<left>-15</left>
 								<top>20</top>
-								<width>1018</width>
-								<height>460</height>
+								<width>670</width>
+								<height>380</height>
 								<aspectratio>scale</aspectratio>
 								<texture colordiffuse="AAFFFFFF">colors/black.png</texture>
 							</control>
 							<control type="textbox">
 								<left>-14</left>
 								<top>20</top>
-								<width>1018</width>
-								<height>460</height>
+								<width>670</width>
+								<height>380</height>
 								<align>center</align>
 								<aligny>center</aligny>
 								<font>font45_title</font>
@@ -135,28 +133,28 @@
 						<animation effect="slide" start="0,0" end="0,-295" time="0" condition="Integer.IsEqual(Container(50).NumItems,0)">Conditional</animation>
 						<visible>[Integer.IsEqual(Container(50).NumItems,0) + !String.IsEmpty(Control.GetLabel(400))]</visible>
 						<control type="image">
-							<left>556</left>
+							<left>-18</left>
 							<top>20</top>
-							<width>1150</width>
+							<width>1154</width>
 							<height>277</height>
 							<aspectratio aligny="top">scale</aspectratio>
-							<texture fallback="special://skin/extras/home-images/music.jpg">$INFO[ListItem.Art(fanart)]</texture >
+							<texture fallback="special://skin/extras/home-images/music.jpg">$INFO[ListItem.Art(fanart)]</texture>
 						</control>
 						<control type="group">
 							<visible>String.IsEmpty(ListItem.Art(fanart))</visible>
 							<control type="image">
 								<left>-15</left>
 								<top>20</top>
-								<width>1018</width>
-								<height>460</height>
+								<width>670</width>
+								<height>380</height>
 								<aspectratio>scale</aspectratio>
 								<texture colordiffuse="AAFFFFFF">colors/black.png</texture>
 							</control>
 							<control type="textbox">
 								<left>-14</left>
 								<top>20</top>
-								<width>1018</width>
-								<height>460</height>
+								<width>670</width>
+								<height>380</height>
 								<align>center</align>
 								<aligny>center</aligny>
 								<font>font45_title</font>
@@ -167,9 +165,9 @@
 				</control>
 				<control type="label" id="400">
 					<left>10</left>
-					<top>490</top>
-					<width>975</width>
-					<height>400</height>
+					<top>485</top>
+					<width>645</width>
+					<height>340</height>
 					<wrapmultiline>true</wrapmultiline>
 					<label>$VAR[MusicInfoTextboxVar]</label>
 					<textcolor>button_focus</textcolor>
@@ -181,9 +179,9 @@
 				<left>80</left>
 				<visible>![Window.Is(songinformation) + Window.IsActive(musicinformation)]</visible>
 				<control type="panel" id="50">
-					<left>300</left>
+					<left>590</left>
 					<top>170</top>
-					<width>1410</width>
+					<width>1180</width>
 					<height>360</height>
 					<ondown>130</ondown>
 					<onup>9000</onup>
@@ -198,7 +196,7 @@
 						<control type="label">
 							<left>40</left>
 							<top>10</top>
-							<width>535</width>
+							<width>546</width>
 							<height>60</height>
 							<font>font12</font>
 							<aligny>center</aligny>
@@ -215,7 +213,7 @@
 						<control type="label">
 							<left>40</left>
 							<top>10</top>
-							<width>535</width>
+							<width>546</width>
 							<height>60</height>
 							<font>font12</font>
 							<aligny>center</aligny>
@@ -232,7 +230,7 @@
 						<control type="label">
 							<left>40</left>
 							<top>10</top>
-							<width>535</width>
+							<width>546</width>
 							<height>60</height>
 							<font>font12</font>
 							<aligny>center</aligny>
@@ -255,7 +253,7 @@
 							<control type="label">
 								<left>40</left>
 								<top>10</top>
-								<width>535</width>
+								<width>546</width>
 								<height>60</height>
 								<font>font12</font>
 								<aligny>center</aligny>
@@ -350,7 +348,7 @@
 				</control>
 				<control type="grouplist" id="9000">
 					<left>-30</left>
-					<top>930</top>
+					<top>864</top>
 					<width>1760</width>
 					<height>300</height>
 					<onleft>9000</onleft>
@@ -358,7 +356,7 @@
 					<onup>130</onup>
 					<ondown>50</ondown>
 					<align>center</align>
-					<itemgap>-12</itemgap>
+					<itemgap>-13</itemgap>
 					<orientation>horizontal</orientation>
 					<control type="radiobutton" id="155">
 						<include content="VideoInfoButtonsCommon">
@@ -445,29 +443,29 @@
 				</control>
 				<include content="LeftRightArrows">
 					<param name="list_id" value="50" />
-					<param name="left_posx" value="270" />
-					<param name="right_posx" value="1730" />
+					<param name="left_posx" value="565" />
+					<param name="right_posx" value="1790" />
 					<param name="posy" value="300" />
 					<param name="visible" value="true" />
 				</include>
 				<control type="group">
 					<control type="image">
-						<left>1025</left>
+						<left>1315</left>
 						<top>474</top>
-						<width>685</width>
-						<height>460</height>
+						<width>450</width>
+						<height>390</height>
 						<aspectratio>scale</aspectratio>
 						<texture colordiffuse="AAFFFFFF">colors/black.png</texture>
 					</control>
 					<control type="group">
-						<left>1040</left>
+						<left>1275</left>
 						<top>480</top>
-						<visible>true</visible>
+						<!-- visible>true</visible -->
 						<control type="list" id="41">
-							<left>0</left>
+							<left>42</left>
 							<top>0</top>
-							<width>640</width>
-							<height>450</height>
+							<width>430</width>
+							<height>385</height>
 							<onleft>130</onleft>
 							<onright>130</onright>
 							<onup>50</onup>
@@ -481,12 +479,11 @@
 									<width>150</width>
 									<height>30</height>
 									<font>font27_narrow</font>
-									<wrapmultiline>true</wrapmultiline>
 									<label>$INFO[ListItem.Label,[COLOR button_focus], [/COLOR]]</label>
 								</control>
 								<control type="label">
 									<left>170</left>
-									<width>450</width>
+									<width>240</width>
 									<height>30</height>
 									<font>font27_narrow</font>
 									<label>$INFO[ListItem.Label2]</label>
@@ -496,7 +493,7 @@
 								<control type="image">
 									<left>0</left>
 									<top>1</top>
-									<width>640</width>
+									<width>430</width>
 									<height>33</height>
 									<texture border="8" colordiffuse="button_focus">buttons/thumbnail_focused.png</texture>
 									<visible>Control.HasFocus(41)</visible>
@@ -505,18 +502,27 @@
 									<left>10</left>
 									<top>0</top>
 									<width>150</width>
-									<wrapmultiline>true</wrapmultiline>
 									<height>30</height>
 									<font>font27_narrow</font>
 									<label>$INFO[ListItem.Label,[COLOR button_focus], [/COLOR]]</label>
 								</control>
 								<control type="label">
 									<left>170</left>
-									<width>450</width>
+									<width>240</width>
+									<height>30</height>
+									<font>font27_narrow</font>
+									<label>$INFO[ListItem.Label2]</label>
+									<scroll>false</scroll>
+									<visible>!Control.HasFocus(41)</visible>
+								</control>
+								<control type="label">
+									<left>170</left>
+									<width>240</width>
 									<height>30</height>
 									<font>font27_narrow</font>
 									<label>$INFO[ListItem.Label2]</label>
 									<scroll>true</scroll>
+									<visible>Control.HasFocus(41)</visible>
 								</control>
 							</focusedlayout>
 							<content>
